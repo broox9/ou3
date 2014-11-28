@@ -14,5 +14,9 @@
   "devDependencies": {
     "http-server": "^0.7.3"
   },
-  "main": "http-server"
+  "main": "ou3.js",
+
+  "scripts": {
+  	"start": "node ou3.js"
+  }
 }
