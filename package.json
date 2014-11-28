@@ -1,0 +1,20 @@
+{
+  "name": "Ou",
+  "version": "3.0.0",
+  "description": "the new hotness",
+  "private": true,
+
+	"engines": {
+        "node": ">=0.10.33",
+        "npm": ">=1.3"
+  },
+
+  "dependencies": {
+  	"http-server": "^0.7.3"
+  },
+
+  "devDependencies": {
+    "http-server": "^0.7.3"
+  },
+  "main": "http-server"
+}
