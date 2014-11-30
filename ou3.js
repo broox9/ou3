@@ -1,6 +1,8 @@
 var express = require('express')
 var app = express()
 
+var port = process.env.PORT || 3000
+
 // require the router
 require('./router/main')(app);
 
@@ -11,7 +13,7 @@ app.engine('html', require('ejs').renderFile)
 
 
 
-var server = app.listen(3700, function () {
+var server = app.listen(port, function () {
 
   var host = server.address().address
   var port = server.address().port
