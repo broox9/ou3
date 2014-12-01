@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head> 
-	<title>Ou3</title>
+	<title>Ou3 Express</title>
 
     <link type="text/css" rel="stylesheet" href="/assets/lib/normalize.css/normalize.css" />
+    <link type="text/css" rel="stylesheet" href="/assets/css/main.css" />
 
+    <script type="text/javascript" src="/assets/lib/lodash/dist/lodash.min.js"></script>
     <script type="text/javascript" src="/assets/lib/jquery/dist/jquery.min.js"></script>
 </head>
 <body ng-app="ou3">
-	<h1>Ou v3.0 Express</h1>
+    <div id="app-content" ng-controller="MainController">
+        <h1>Ou v3.0</h1>
+
+        <div>
+            <strong>Latitude</strong>: {{defaultStart.latitude}}
+            <br />
+            <strong>Longitude</strong>: {{defaultStart.longitude}}
+
+        <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+    </div>
 </body>
 
 <script type="text/javascript" src="/assets/lib/angular/angular.min.js"></script>
 <script type="text/javascript" src="/assets/lib/angular-touch/angular-touch.min.js"></script>
+<script type="text/javascript" src="/assets/lib/angular-google-maps/dist/angular-google-maps.min.js"></script>
 
+<!-- actual app -->
 <script type="text/javascript" src="/assets/js/app/ou3.js"></script>
+<script type="text/javascript" src="/assets/js/app/controllers/main_controller.js"></script>
 </html>
