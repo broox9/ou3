@@ -3,7 +3,7 @@ ou3.controller('MainController', ['$scope', 'uiGmapGoogleMapApi', function ($sco
 
   $scope.map = {
     center: $scope.defaultStart,
-    zoom: 8
+    zoom: 15
   }
 
 

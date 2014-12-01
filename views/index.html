@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head> 
-	<title>Ou3 Express</title>
+    <title>¿Ou? v 3.0 | Where are you?</title>
+    <!-- webapp ios Stuff -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="translucent-black">
+    <meta name="apple-mobile-web-app-title" content="Ou? | Where r u?">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 
-    <link type="text/css" rel="stylesheet" href="/assets/lib/normalize.css/normalize.css" />
-    <link type="text/css" rel="stylesheet" href="/assets/css/main.css" />
+    <!-- Caching -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
 
-    <script type="text/javascript" src="/assets/lib/lodash/dist/lodash.min.js"></script>
-    <script type="text/javascript" src="/assets/lib/jquery/dist/jquery.min.js"></script>
+    <!-- iOS icons -->
+    <link rel="apple-touch-startup-image" href="/app/img/ou-start.jpg" />
+    <link rel="apple-touch-icon" href="/app/img/ou-icon@2x.png" />
+
+
+    <link type="text/css" rel="stylesheet" href="/public/lib/normalize.css/normalize.css" />
+    <link type="text/css" rel="stylesheet" href="/public/lib/font-awesome/css/font-awesome.min.css" />
+    <link type="text/css" rel="stylesheet" href="/public/css/main.css" />
+
+    <script type="text/javascript" src="/public/lib/lodash/dist/lodash.min.js"></script>
+    <script type="text/javascript" src="/public/lib/jquery/dist/jquery.min.js"></script>
 </head>
 <body ng-app="ou3">
     <div id="app-content" ng-controller="MainController">
         <h1>Ou v3.0</h1>
 
         <div>
-            <strong>Latitude</strong>: {{defaultStart.latitude}}
+            <strong class="fa fa-map-marker">Latitude</strong>: {{defaultStart.latitude}}
             <br />
-            <strong>Longitude</strong>: {{defaultStart.longitude}}
+            <strong class="fa fa-location-arrow">Longitude</strong>: {{defaultStart.longitude}}
 
         <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
     </div>
 </body>
 
-<script type="text/javascript" src="/assets/lib/angular/angular.min.js"></script>
-<script type="text/javascript" src="/assets/lib/angular-touch/angular-touch.min.js"></script>
-<script type="text/javascript" src="/assets/lib/angular-google-maps/dist/angular-google-maps.min.js"></script>
+<script type="text/javascript" src="/public/lib/angular/angular.min.js"></script>
+<script type="text/javascript" src="/public/lib/angular-touch/angular-touch.min.js"></script>
+<script type="text/javascript" src="/public/lib/angular-google-maps/dist/angular-google-maps.min.js"></script>
 
 <!-- actual app -->
-<script type="text/javascript" src="/assets/js/app/ou3.js"></script>
-<script type="text/javascript" src="/assets/js/app/controllers/main_controller.js"></script>
+<script type="text/javascript" src="/public/js/app/ou3.js"></script>
+<script type="text/javascript" src="/public/js/app/controllers/main_controller.js"></script>
 </html>
