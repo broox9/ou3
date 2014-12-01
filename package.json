@@ -18,9 +18,10 @@
   "devDependencies": {
     "http-server": "^0.7.3"
   },
-  "main": "ou3.js",
+  "main": "server.js",
+  "unsafe-perm": true,
   "scripts": {
-    "prepublish": "node_modules/bower/bin/bower install --force-latest --production",
+    "postinstall": "node_modules/bower/bin/bower install --force-latest --production",
     "start": "node server.js"
 
   }
