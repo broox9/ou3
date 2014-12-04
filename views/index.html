@@ -22,23 +22,31 @@
     <link type="text/css" rel="stylesheet" href="/public/lib/font-awesome/css/font-awesome.min.css" />
     <link type="text/css" rel="stylesheet" href="/public/css/main.css" />
 
-    <script type="text/javascript">
-        console.log("Try 4")
-    </script>
 
     <script type="text/javascript" src="/public/lib/lodash/dist/lodash.min.js"></script>
     <script type="text/javascript" src="/public/lib/jquery/dist/jquery.min.js"></script>
 </head>
+
 <body ng-app="ou3">
     <div id="app-content" ng-controller="MainController">
-        <h1>Ou v3.0</h1>
 
-        <div>
-            <strong class="fa fa-map-marker">Latitude</strong>: {{defaultStart.latitude}}
+        <div id="data-section" ng-controller="DataController" ng-hide="!mapLoaded" class="ng-hide">
+            <strong>City</strong>: {{area.city}}
             <br />
-            <strong class="fa fa-location-arrow">Longitude</strong>: {{defaultStart.longitude}}
+            <strong>County</strong>: {{area.county}}, {{area.state}}
+            <br />
+            <strong>Zip</strong>: {{area.zip}}
+            <br />
+            <strong>Street</strong>: {{area.street}}
+            <br />
 
-        <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+            <button ng-click="updatePosition()">update position</button>
+        </div>
+
+        <ui-gmap-google-map center='map.center'
+                            refresh="map.refresh"
+                            zoom='map.zoom'
+                            control="map.control"></ui-gmap-google-map>
     </div>
 </body>
 
@@ -49,4 +57,5 @@
 <!-- actual app -->
 <script type="text/javascript" src="/public/js/app/ou3.js"></script>
 <script type="text/javascript" src="/public/js/app/controllers/main_controller.js"></script>
+<script type="text/javascript" src="/public/js/app/controllers/data_controller.js"></script>
 </html>
