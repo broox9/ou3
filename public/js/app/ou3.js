@@ -23,7 +23,7 @@ ou3.factory('placer', [function () {
       'administrative_area_level_2'
     ];
 
-    console.log("raw data", data)
+    //console.log("raw data", data)
     return typeGrep(data,level_codes);
 
   };
@@ -41,7 +41,7 @@ ou3.factory('placer', [function () {
       }
     }
 
-    console.log("extracted Data", extractObj);
+    //console.log("extracted Data", extractObj);
     return extractObj;
   }
 

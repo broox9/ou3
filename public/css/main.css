@@ -30,12 +30,13 @@ ui-gmap-google-map,
     width: 100%;
     font-size: 1.25em;
     font-weight: lighter;
-    padding: 0.25em;
+    padding: 0;
 
-    background: #565656;
+    background-color: #565656;
+    background: linear-gradient(to top right, #333, #565656);
     color: #fff;
-
     box-shadow: -4px 0px 30px #000;
+    
 
     transition-property: opacity;
     transition-duration: 500ms;
@@ -49,13 +50,41 @@ ui-gmap-google-map,
 ul li .super {
     font-size: 0.5em;
     display: block;
+    color: #F57F17
+;
+    margin-bottom: 0.25em;
 }
 #data-section ul li {
-    margin: 0.5em 0;
+    margin: 0;
+    padding: 0.25em 0.5em;
+
 }
 
-#data-section ul li.neighbordhood {
+#update-button {
+    position: absolute;
+    right: 0.25em;
+    top: -1em;
+}
 
+.material {
+    background-color: #fff;
+    padding: 0.656565em 0.75em;
+    border-radius: 2em;
+    box-shadow: 1px 4px 5px #777;
+
+}
+.material:active {
+    box-shadow: 1px 6px 8px #555;
+}
+
+#update-button > .fa-repeat {
+    color: green;
+}
+
+#data-section ul li.neighborhood {
+    background-color: #FFEB3B;
+    color: #333;
+    padding-bottom: 0.5em;
 }
 #data-section ul li.neighbordhood {
 
