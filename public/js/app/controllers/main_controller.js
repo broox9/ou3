@@ -1,11 +1,11 @@
-ou3.controller('MainController', ['$scope', 'geo','uiGmapGoogleMapApi', function ($scope, geo, uiGmapGoogleMapApi) {
+ou3.controller('MainController', ['$scope', '$window','uiGmapGoogleMapApi', function ($scope, $window, uiGmapGoogleMapApi) {
   $scope.defaultStart = {latitude: 40.216339, longitude: -74.741427};
   $scope.width = window.innerWidth;
   $scope.height = window.innerHeight;
   $scope.currentPosition = $scope.defaultStart;
 
   $scope.updatePosition = function () {
-    window.navigator.geolocation.getCurrentPosition(updateLocation, showLocationError);
+    $window.navigator.geolocation.getCurrentPosition(updateLocation, showLocationError);
   }
 
   $scope.map = {
@@ -40,15 +40,12 @@ ou3.controller('MainController', ['$scope', 'geo','uiGmapGoogleMapApi', function
 
   //once the map API is loaded..
   uiGmapGoogleMapApi.then(function (maps) {
-//    console.log("maps", maps)
     $scope.geocoder = new maps.Geocoder();
-
-
     $scope.map.refresh = true;
-    return maps;
+    //return maps;
   }).then(function (maps) {
-//    console.log("Next promise", maps);
-        window.navigator.geolocation.getCurrentPosition(updateLocation, showLocationError);
+    //console.log("Next promise", maps);
+    $window.navigator.geolocation.getCurrentPosition(updateLocation, showLocationError);
   });
 
 }])
