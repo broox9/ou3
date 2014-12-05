@@ -28,7 +28,7 @@ ui-gmap-google-map,
     bottom: 0;
     top: 45%;
     width: 100%;
-    font-size: 1.5em;
+    font-size: 1.25em;
 
     background: #565656;
     color: #fff;
@@ -38,6 +38,8 @@ ui-gmap-google-map,
     transition-property: opacity;
     transition-duration: 500ms;
 }
+
+#data-section strong {display: none}
 
 
 /*@media all and (orientation:portrait) {*/

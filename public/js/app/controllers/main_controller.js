@@ -5,7 +5,7 @@ ou3.controller('MainController', ['$scope', 'geo','uiGmapGoogleMapApi', function
   $scope.currentPosition = $scope.defaultStart;
 
   $scope.updatePosition = function () {
-    geo.getLocation(updateLocation, showLocationError);
+    window.navigator.geolocation.getCurrentPosition(updateLocation, showLocationError);
   }
 
   $scope.map = {
@@ -48,7 +48,7 @@ ou3.controller('MainController', ['$scope', 'geo','uiGmapGoogleMapApi', function
     return maps;
   }).then(function (maps) {
 //    console.log("Next promise", maps);
-    geo.getLocation(updateLocation, showLocationError);
+        window.navigator.geolocation.getCurrentPosition(updateLocation, showLocationError);
   });
 
 }])
