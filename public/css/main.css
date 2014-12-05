@@ -28,6 +28,7 @@ ui-gmap-google-map,
     bottom: 0;
     top: 45%;
     width: 100%;
+    font-size: 1.5em;
 
     background: #565656;
     color: #fff;

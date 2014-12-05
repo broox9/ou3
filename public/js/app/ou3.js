@@ -8,8 +8,9 @@ var ou3 = angular.module("ou3", ['uiGmapgoogle-maps'])
 }]);
 
 ou3.factory('geo', ['$window', function($window) {
-  return $window.navigator.geolocation;
-
+  return  {
+    getLocation: $window.navigator.geolocation.getCurrentPosition
+  };
 
 }]);
 

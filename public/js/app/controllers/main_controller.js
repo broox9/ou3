@@ -4,8 +4,6 @@ ou3.controller('MainController', ['$scope', 'geo','uiGmapGoogleMapApi', function
   $scope.height = window.innerHeight;
   $scope.currentPosition = $scope.defaultStart;
 
-  $scope.mapInst = {};
-
   $scope.updatePosition = function () {
     geo.getLocation(updateLocation, showLocationError);
   }
@@ -20,10 +18,13 @@ ou3.controller('MainController', ['$scope', 'geo','uiGmapGoogleMapApi', function
 
   function updateLocation (location) {
     $scope.currentPosition = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
+    $scope.geocoder.geocode({'latLng': $scope.currentPosition}, handleGeoCode)
 
-    $scope.mapInst = $scope.map.control.getGMap();
-    $scope.map.control.refresh(location.coords);
-    $scope.areaDetails = $scope.geocoder.geocode({'latLng': $scope.currentPosition}, handleGeoCode)
+    try {
+      $scope.map.control.refresh(location.coords);
+    } catch (error) {
+      console.log("there is an error with refresh")
+    }
   }
 
   function showLocationError (error) {
@@ -32,19 +33,22 @@ ou3.controller('MainController', ['$scope', 'geo','uiGmapGoogleMapApi', function
   }
 
   function handleGeoCode (data) {
-    console.log("handling GeoCoding", data);
-
     if (data.length && data[0]['address_components']) {
-      console.log("broadcasting geocode")
       $scope.$broadcast('geocode', data[0]['address_components'])
     }
   }
 
   //once the map API is loaded..
   uiGmapGoogleMapApi.then(function (maps) {
+//    console.log("maps", maps)
     $scope.geocoder = new maps.Geocoder();
-    geo.getCurrentPosition(updateLocation, showLocationError);
+
+
     $scope.map.refresh = true;
+    return maps;
+  }).then(function (maps) {
+//    console.log("Next promise", maps);
+    geo.getLocation(updateLocation, showLocationError);
   });
 
 }])
