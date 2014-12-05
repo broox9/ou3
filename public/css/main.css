@@ -29,6 +29,8 @@ ui-gmap-google-map,
     top: 45%;
     width: 100%;
     font-size: 1.25em;
+    font-weight: lighter;
+    padding: 0.25em;
 
     background: #565656;
     color: #fff;
@@ -39,7 +41,25 @@ ui-gmap-google-map,
     transition-duration: 500ms;
 }
 
-#data-section strong {display: none}
+#data-section ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+ul li .super {
+    font-size: 0.5em;
+    display: block;
+}
+#data-section ul li {
+    margin: 0.5em 0;
+}
+
+#data-section ul li.neighbordhood {
+
+}
+#data-section ul li.neighbordhood {
+
+}
 
 
 /*@media all and (orientation:portrait) {*/

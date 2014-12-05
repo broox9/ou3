@@ -30,17 +30,30 @@
 <body ng-app="ou3">
     <div id="app-content" ng-controller="MainController">
 
-        <div id="data-section" ng-controller="DataController" ng-hide="!mapLoaded" class="ng-hide">
-            <strong>Hood</strong>: {{area.hood}}
-            <br />
-            <strong>City</strong>: {{area.city}}
-            <br />
-            <strong>County</strong>: {{area.county}}, {{area.state}}
-            <br />
-            <strong>Zip</strong>: {{area.zip}}
-            <br />
-            <strong>Street</strong>: {{area.street}}
-            <br />
+        <div id="data-section" ng-controller="DataController" ng-hide="!mapLoaded" class="ng-hide" ng-swipe-right="handleSwipeRight()">
+             <ul>
+                <li class="neighborhood" ng-show="area.neighborhood">
+                    <span class="super">Neighborhood</span>
+                    {{area.neighborhood}}<span ng-show="area.sublocality_level_1">, {{area.sublocality_level_1}}</span>
+                </li>
+
+                <li ng-show="area.locality">
+                    {{area.locality}}
+                </li>
+
+                <li>
+                    {{area.administrative_area_level_2}}, {{area.administrative_area_level_1}}
+                </li>
+
+                <li>
+                    {{area.postal_code}}<span ng-show="area.postal_code_suffix">-{{area.postal_code_suffix}}</span>
+                </li>
+
+                <li>
+                    {{area.route}}
+                </li>
+            </ul>
+
 
             <button ng-click="updatePosition()">update position</button>
         </div>
