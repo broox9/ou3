@@ -14,8 +14,8 @@
     <meta http-equiv="Expires" content="0"/>
 
     <!-- iOS icons -->
-    <!--<link rel="apple-touch-startup-image" href="/app/img/ou-start.jpg" />-->
-    <!--<link rel="apple-touch-icon" href="/app/img/ou-icon@2x.png" />-->
+    <link rel="apple-touch-startup-image" href="/public/img/ou-start.jpg" />
+    <link rel="apple-touch-icon" href="/public/img/ou-icon@2x.png" />
 
 
     <link type="text/css" rel="stylesheet" href="/public/lib/normalize.css/normalize.css" />
@@ -41,12 +41,12 @@
             </a>
 
             <ul>
-                <li class="neighborhood" ng-show="area.neighborhood">
+                <li class="special" ng-show="area.neighborhood">
                     <span class="super">Neighborhood</span>
                     {{area.neighborhood}}<span ng-show="area.sublocality_level_1">, {{area.sublocality_level_1}}</span>
                 </li>
 
-                <li ng-show="area.locality">
+                <li ng-show="area.locality" ng-class="{special: !area.neighborhood}">
                     {{area.locality}}
                 </li>
 
