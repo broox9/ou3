@@ -6,6 +6,15 @@ ou3.controller('MainController', [
     //default to St. Francis Hospital ... where I started **rimshot**
     $scope.position = {latitude: 40.216339, longitude: -74.741427};
 
+    $scope.marker = {
+      idKey: Date.now(),
+      coords: {
+        latitude: $scope.position.latitude,
+        longitude: $scope.position.longitude
+      },
+      map: {} //$scope.map.controlOpts.getGMap()
+    }
+
     $scope.updatePosition = function () {
       $window.navigator.geolocation.getCurrentPosition(updateLocation, showLocationError);
     }
@@ -27,7 +36,7 @@ ou3.controller('MainController', [
       $scope.geocoder.geocode({'latLng': $scope.position}, handleGeoCode);
 
       try {
-        $scope.map.controlOpts.panTo(location.coords);
+        $scope.map.controlOpts.refresh(location.coords);
         setMarker(location)
       } catch (error) {
         console.log("there is an error with refresh")
@@ -35,17 +44,23 @@ ou3.controller('MainController', [
     }
 
     function setMarker (loc) {
-     console.log("they got get map yo?", $scope.map.controlOpts, loc.timestamp);
-     $scope.marker = {
-      idKey: loc.timestamp,
-      position: $scope.position,
-      map: $scope.map.controlOpts.getGMap()
-     }
+//      console.log("setting marker")
+//      var myLatLng = new $scope.map_service.LatLng(loc.coords.latitude, loc.coords.longitude)
+//      var map = $scope.map.controlOpts.getGMap();
+//
+//      var marker = new $scope.map_service.maps.Marker({
+//        position: myLatLng,
+//        map: map,
+//        title: 'Hello World!'
+//      });
+//
+//      console.log('Marker', marker, myLatLng)
+
     }
 
     function showLocationError (error) {
       console.log("Loc Error, loc", error)
-      return $scope.defaultStart;
+      return $scope.position;
     }
 
     function handleGeoCode (data) {

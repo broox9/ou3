@@ -31,11 +31,6 @@
     <div id="app-content" ng-controller="MainController">
 
         <div id="data-section" ng-controller="DataController" ng-hide="!mapLoaded" class="ng-hide" ng-swipe-right="handleSwipeRight()">
-            <!--<span id="update-button" class="fa-stack fa-lg" ng-click="updatePosition()">-->
-                <!--<i class="fa fa-circle fa-stack-2x" ></i>-->
-                <!--<i class="fa fa-repeat fa-stack-1x"></i>-->
-            <!--</span>-->
-
             <a id="update-button" class="material" ng-click="updatePosition()">
                 <i class="fa fa-repeat"></i>
             </a>
@@ -69,6 +64,7 @@
                                 refresh="map.refresh"
                                 zoom='map.zoom'
                                 control="map.controlOpts">
+
                                             </ui-gmap-google-map>
         </div>
 
