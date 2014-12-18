@@ -13,6 +13,9 @@
     <meta http-equiv="Pragma" content="no-cache"/>
     <meta http-equiv="Expires" content="0"/>
 
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1KY0AYxsv3GjDFZRrfTQA3MpFAr4zZtU"></script>
+
     <!-- iOS icons -->
     <link rel="apple-touch-startup-image" href="/public/img/ou-start.jpg" />
     <link rel="apple-touch-icon" href="/public/img/ou-icon@2x.png" />
@@ -59,14 +62,7 @@
             </ul>
         </div>
 
-        <div id="map-canvas">
-            <ui-gmap-google-map center='map.center'
-                                refresh="map.refresh"
-                                zoom='map.zoom'
-                                control="map.controlOpts">
-
-                                            </ui-gmap-google-map>
-        </div>
+        <div id="map-canvas"></div>
 
     </div>
 </body>
