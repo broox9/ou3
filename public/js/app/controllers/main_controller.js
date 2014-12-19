@@ -21,12 +21,13 @@ ou3.controller('MainController', [
       })
     };
 
-    $scope.updatePosition();
+
 
 
     //make sure google service is loaded
     brooxMap.loadGoogle.then(function () {
       brooxMap.initMap(mapCanvas);
+      $scope.updatePosition();
     });
 
     function handleGeoCode (data) {
