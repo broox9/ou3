@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head> 
-    <title>¿Ou? v 3.0 | Where are you?</title>
+    <title>¿Ou? v3.0.1</title>
     <!-- webapp ios Stuff -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="translucent-black">
-    <meta name="apple-mobile-web-app-title" content="Ou? | Where r u?">
+    <meta name="apple-mobile-web-app-title" content="Ou? v3.0.1">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 
     <!-- Caching -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
     <meta http-equiv="Pragma" content="no-cache"/>
-    <!--<meta http-equiv="Expires" content="0"/>-->
+    <meta http-equiv="Expires" content="0"/>
 
     <script type="text/javascript"
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1KY0AYxsv3GjDFZRrfTQA3MpFAr4zZtU"></script>
@@ -39,7 +39,7 @@
             </a>
 
             <ul>
-                <li class="special" ng-show="area.neighborhood">
+                <li class="special" ng-show="area.neighborhood || area.sublocality_level_1">
                     <span class="super">Neighborhood</span>
                     {{area.neighborhood}}<span ng-show="area.sublocality_level_1">, {{area.sublocality_level_1}}</span>
                 </li>
