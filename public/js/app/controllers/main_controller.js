@@ -18,7 +18,6 @@ ou3.controller('MainController', [
       $window.navigator.geolocation.getCurrentPosition(function (location) {
         $scope.position = new brooxMap.LatLng(location.coords.latitude, location.coords.longitude);
         brooxMap.updateMap($scope.position);
-        console.log("location")
         $scope.geocoder.geocode({'latLng': $scope.position}, handleGeoCode);
       })
     };
