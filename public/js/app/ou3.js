@@ -86,11 +86,11 @@ ou3.factory('brooxMap', ['$q','$window', function ($q, $window) {
   }
 
   function updateMap (coords) {
-    if (coordinates.hasOwnProperty('k')) {
-      coordinates = new google.maps.LatLng(coords.latitude, coords.longitude)
-    } else {
+    //if (coordinates.hasOwnProperty('k')) {
+      //coordinates = new google.maps.LatLng(coords.latitude, coords.longitude)
+    //} else {
       coordinates = coords
-    }
+    //}
 
 
     if(map) {

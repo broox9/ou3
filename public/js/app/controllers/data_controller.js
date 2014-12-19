@@ -1,12 +1,15 @@
-ou3.controller('DataController', ['$scope','placer', 'uiGmapGoogleMapApi', function ($scope, placer, uiGmapGoogleMapApi) {
+ou3.controller('DataController', ['$scope','placer', 'brooxMap', function ($scope, placer, brooxMap) {
   $scope.mapLoaded = false;
-  $scope.area = {};
+  $scope.area = {
+    locality: "here"
+  };
 
-  $scope.swiped = false
+  $scope.swiped = false;
 
   $scope.$on('geocode', function (e, data) {
     $scope.locationData = data;
     $scope.area = placer.extract(data);
+    console.log("broox is here", $scope.area)
   });
 
   $scope.handleSwipe = function (e) {
@@ -14,9 +17,7 @@ ou3.controller('DataController', ['$scope','placer', 'uiGmapGoogleMapApi', funct
   };
 
 
-  //once the map API is loaded..
-  uiGmapGoogleMapApi.then(function (maps) {
-    //more junk
+  brooxMap.loadGoogle.then(function () {
     $scope.mapLoaded = true;
   });
 

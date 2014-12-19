@@ -8,17 +8,16 @@ ou3.controller('MainController', [
     if (!$window.navigator.geolocation) {
       alert("This isn't gonna work out :/");
     }
-    //set scope vars
-    $scope.geocoder = new brooxMap.google.maps.Geocoder();
-    $scope.mapCanvas = document.querySelector('#map-canvas');
+
+    var geocoder = new brooxMap.google.maps.Geocoder();
+    var mapCanvas = document.querySelector('#map-canvas');
+
     $scope.position = {lat:40.216339, lng: -74.741427};  //default coords
-
-
     $scope.updatePosition = function () {
       $window.navigator.geolocation.getCurrentPosition(function (location) {
         $scope.position = new brooxMap.LatLng(location.coords.latitude, location.coords.longitude);
         brooxMap.updateMap($scope.position);
-        $scope.geocoder.geocode({'latLng': $scope.position}, handleGeoCode);
+        geocoder.geocode({'latLng': $scope.position}, handleGeoCode);
       })
     };
 
@@ -27,7 +26,7 @@ ou3.controller('MainController', [
 
     //make sure google service is loaded
     brooxMap.loadGoogle.then(function () {
-      $scope.map = brooxMap.initMap($scope.mapCanvas);
+      $scope.map = brooxMap.initMap(mapCanvas);
     });
 
     function handleGeoCode (data) {
