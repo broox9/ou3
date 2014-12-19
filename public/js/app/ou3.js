@@ -81,16 +81,17 @@ ou3.factory('brooxMap', ['$q','$window', function ($q, $window) {
     };
 
     map = new google.maps.Map(canvas, mapOptions);
+    console.log("MAP LOADED");
     setMarker();
-    return map;
+    //return map;
   }
 
   function updateMap (coords) {
-    //if (coordinates.hasOwnProperty('k')) {
-      //coordinates = new google.maps.LatLng(coords.latitude, coords.longitude)
-    //} else {
+    if (coordinates.hasOwnProperty('k')) {
+      coordinates = new google.maps.LatLng(coords.latitude, coords.longitude)
+    } else {
       coordinates = coords
-    //}
+    }
 
 
     if(map) {

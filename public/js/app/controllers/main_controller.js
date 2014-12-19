@@ -26,7 +26,7 @@ ou3.controller('MainController', [
 
     //make sure google service is loaded
     brooxMap.loadGoogle.then(function () {
-      $scope.map = brooxMap.initMap(mapCanvas);
+      brooxMap.initMap(mapCanvas);
     });
 
     function handleGeoCode (data) {

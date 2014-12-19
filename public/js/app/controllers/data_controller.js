@@ -6,6 +6,7 @@ ou3.controller('DataController', ['$scope','placer', 'brooxMap', function ($scop
   $scope.$on('geocode', function (e, data) {
     $scope.locationData = data;
     $scope.dataUpdate(placer.extract(data));
+
   });
 
   $scope.handleSwipe = function (e) {
@@ -18,8 +19,8 @@ ou3.controller('DataController', ['$scope','placer', 'brooxMap', function ($scop
   });
 
   $scope.dataUpdate = function (data) {
+    $scope.area = {};
     for (d in data) {
-      console.log(d, data[d])
       $scope.area[d] = data[d];
     }
   }
