@@ -1,9 +1,8 @@
 ou3.controller('MainController', [
   '$scope',
   '$window',
-  '$document',
   'brooxMap',
-  function ($scope, $window, $document, brooxMap) {
+  function ($scope, $window, brooxMap) {
     //initial check
     if (!$window.navigator.geolocation) {
       alert("This isn't gonna work out :/");
@@ -11,6 +10,12 @@ ou3.controller('MainController', [
 
     var geocoder = new brooxMap.google.maps.Geocoder();
     var mapCanvas = document.querySelector('#map-canvas');
+
+    $scope.miniLock = false;
+    $scope.$on('set_mini_lock', function (e, toCollapse) {
+      $scope.miniLock = toCollapse;
+    });
+
 
     $scope.position = {lat:40.216339, lng: -74.741427};  //default coords
     $scope.updatePosition = function () {
@@ -20,9 +25,6 @@ ou3.controller('MainController', [
         geocoder.geocode({'latLng': $scope.position}, handleGeoCode);
       })
     };
-
-
-
 
     //make sure google service is loaded
     brooxMap.loadGoogle.then(function () {

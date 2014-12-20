@@ -1,15 +1,4 @@
-var ou3 = angular.module("ou3", ['uiGmapgoogle-maps', 'ngTouch'])
-  .constant('api_keys',{
-    'google_maps': 'AIzaSyD1KY0AYxsv3GjDFZRrfTQA3MpFAr4zZtU'
-  })
-  .config(['uiGmapGoogleMapApiProvider', function(uiGmapGoogleMapApiProvider) {
-    uiGmapGoogleMapApiProvider.configure({
-      //    key: 'your api key',
-      v: '3.17',
-      libraries: 'weather,geometry,visualization,places'
-  });
-}]);
-
+var ou3 = angular.module("ou3", ['swipe']);
 
 ou3.factory('placer', [function () {
 
@@ -82,9 +71,9 @@ ou3.factory('brooxMap', ['$q','$window', function ($q, $window) {
     };
 
     map = new google.maps.Map(canvas, mapOptions);
-    console.log("MAP LOADED");
-    setMarker();
     mapLoadedDefer.resolve();
+    setMarker();
+
     //return map;
   }
 

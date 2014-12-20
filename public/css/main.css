@@ -14,6 +14,7 @@ html, body {
 
 #map-canvas {
     display: block;
+    position: absolute;
     width: 100%;
     height: 60%;
 }
@@ -38,7 +39,9 @@ html, body {
     box-shadow: -4px 0px 30px #000;
     
 
-    transition-property: opacity;
+    -webkit-transition-property: opacity, top, height;
+    transition-property: opacity, top, height;
+    -webkit-transition-duration: 500ms;
     transition-duration: 500ms;
 }
 
@@ -58,6 +61,13 @@ ul li .super {
     padding: 0.25em 0.5em;
 }
 
+#data-section ul li.special {
+    background-color: #FFEB3B;
+    color: #333;
+    padding: 0.5em;
+}
+
+/* = UPDATE BUTTON ****** */
 #update-button {
     transitiion-property: bottom;
     transition-duration: 250ms;
@@ -82,12 +92,6 @@ ul li .super {
     font-size: 1.5em;
 }
 
-#data-section ul li.special {
-    background-color: #FFEB3B;
-    color: #333;
-    padding: 0.5em;
-}
-
 
 @media all and (orientation:landscape) {
 
@@ -104,6 +108,7 @@ ul li .super {
         bottom: 0;
         right: 0;
         width: 40%;
+        box-shadow: -2px 0px 10px #777;
     }
 
     #update-button {
@@ -111,6 +116,30 @@ ul li .super {
         top: initial;
         left: -1em;
         bottom: 0.5em;
+    }
+
+}
+
+@media all and (orientation:portrait) {
+    #app-content.collapse #data-section {
+        height: auto;
+        top: initial;
+        bottom: 0;
+    }
+
+    #app-content.collapse #data-section .main-data li {
+        display: none;
+    }
+    #app-content.collapse #data-section .main-data li:first-child {
+        display: block;
+    }
+
+    #app-content.collapse #data-section .extra-data {
+        display: none;
+    }
+
+    #app-content.collapse #map-canvas {
+        height: 100%;
     }
 
 }

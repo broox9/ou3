@@ -31,14 +31,15 @@
 </head>
 
 <body ng-app="ou3">
-    <div id="app-content" ng-controller="MainController">
+    <div id="app-content" ng-controller="MainController" ng-class="(miniLock)? 'collapse': 'expand' ">
 
-        <div id="data-section" ng-controller="DataController" ng-hide="!mapLoaded" class="ng-hide" ng-swipe-right="handleSwipeRight()">
+        <div id="data-section" ng-controller="DataController" ng-hide="!mapLoaded" class="ng-hide"
+             ng-swipe-up="handleVerticalSwipe('up')" ng-swipe-down="handleVerticalSwipe('down')">
             <a id="update-button" class="material" ng-click="updatePosition()">
                 <i class="fa fa-repeat"></i>
             </a>
 
-            <ul>
+            <ul class="main-data">
                 <li class="special" ng-show="area.neighborhood || area.sublocality_level_1">
                     <span class="super">Neighborhood</span>
                     {{area.neighborhood}}<span ng-show="area.sublocality_level_1">, {{area.sublocality_level_1}}</span>
@@ -47,6 +48,9 @@
                 <li ng-show="area.locality" ng-class="{special: !area.neighborhood}">
                     {{area.locality}}
                 </li>
+
+            </ul>
+            <ul class="extra-data">
                 <li>
                     {{area.administrative_area_level_2}}, {{area.administrative_area_level_1}}
                 </li>
@@ -69,8 +73,8 @@
 </body>
 
 <script type="text/javascript" src="/public/lib/angular/angular.min.js"></script>
-<script type="text/javascript" src="/public/lib/angular-touch/angular-touch.min.js"></script>
-<script type="text/javascript" src="/public/lib/angular-google-maps/dist/angular-google-maps.min.js"></script>
+<script type="text/javascript" src="/public/lib/angular-swipe/dist/angular-swipe.min.js"></script>
+<!--<script type="text/javascript" src="/public/lib/angular-google-maps/dist/angular-google-maps.min.js"></script>-->
 
 <!-- actual app -->
 <script type="text/javascript" src="/public/js/app/ou3.js"></script>

@@ -1,6 +1,8 @@
-ou3.controller('DataController', ['$scope','placer', 'brooxMap', function ($scope, placer, brooxMap) {
+ou3.controller('DataController', [
+  '$scope',
+  'placer',
+  'brooxMap', function ($scope, placer, brooxMap) {
   $scope.mapLoaded = false;
-  $scope.swiped = false;
   $scope.area = {};
 
   $scope.$on('geocode', function (e, data) {
@@ -9,8 +11,12 @@ ou3.controller('DataController', ['$scope','placer', 'brooxMap', function ($scop
 
   });
 
-  $scope.handleSwipe = function (e) {
-    console.log("swipe", e)
+  $scope.handleVerticalSwipe = function (direction) {
+    var toCollapse = true;
+    if (direction === "up") {
+      toCollapse = false;
+    }
+    $scope.$emit('set_mini_lock', toCollapse);
   };
 
 
