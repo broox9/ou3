@@ -58,6 +58,7 @@ ou3.factory('placer', [function () {
 ou3.factory('brooxMap', ['$q','$window', function ($q, $window) {
   var google = $window.google;
   var loadGoogleDefer = $q.defer();
+  var mapLoadedDefer = $q.defer();
   var coordinates = {lat: 40.216339, lng: -74.741427};
   var map = null;
   var currentMarker = null;
@@ -83,6 +84,7 @@ ou3.factory('brooxMap', ['$q','$window', function ($q, $window) {
     map = new google.maps.Map(canvas, mapOptions);
     console.log("MAP LOADED");
     setMarker();
+    mapLoadedDefer.resolve();
     //return map;
   }
 
@@ -116,6 +118,7 @@ ou3.factory('brooxMap', ['$q','$window', function ($q, $window) {
 
   return {
     loadGoogle: loadGoogleDefer.promise,
+    mapLoaded: mapLoadedDefer.promise,
     google: google,
     initMap: initMap,
     updateMap: updateMap,

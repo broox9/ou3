@@ -4,8 +4,8 @@ ou3.controller('DataController', ['$scope','placer', 'brooxMap', function ($scop
   $scope.area = {};
 
   $scope.$on('geocode', function (e, data) {
-    $scope.locationData = data;
-    $scope.dataUpdate(placer.extract(data));
+    $scope.area = placer.extract(data);
+    $scope.$apply(); //i know i know i have to refactor this
 
   });
 
@@ -14,15 +14,8 @@ ou3.controller('DataController', ['$scope','placer', 'brooxMap', function ($scop
   };
 
 
-  brooxMap.loadGoogle.then(function () {
+  brooxMap.mapLoaded.then(function (map) {
     $scope.mapLoaded = true;
   });
-
-  $scope.dataUpdate = function (data) {
-    $scope.area = {};
-    for (d in data) {
-      $scope.area[d] = data[d];
-    }
-  }
 
 }])
