@@ -1,4 +1,4 @@
-var ou3 = angular.module("ou3", ['swipe']);
+var ou3 = angular.module("ou3", ['ngTouch','swipe']);
 
 ou3.factory('placer', [function () {
 

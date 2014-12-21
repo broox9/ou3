@@ -19,6 +19,10 @@ ou3.controller('DataController', [
     $scope.$emit('set_mini_lock', toCollapse);
   };
 
+  $scope.handleUpdatePosition = function () {
+    console.log("handleUpdatePosition Called", arguments)
+  }
+
 
   brooxMap.mapLoaded.then(function (map) {
     $scope.mapLoaded = true;

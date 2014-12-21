@@ -19,12 +19,15 @@ ou3.controller('MainController', [
 
     $scope.position = {lat:40.216339, lng: -74.741427};  //default coords
     $scope.updatePosition = function () {
+      console.log("update position called");
       $window.navigator.geolocation.getCurrentPosition(function (location) {
         $scope.position = new brooxMap.LatLng(location.coords.latitude, location.coords.longitude);
         brooxMap.updateMap($scope.position);
         geocoder.geocode({'latLng': $scope.position}, handleGeoCode);
       })
     };
+
+    $scope.$on('update_position', $scope.updatePosition)
 
     //make sure google service is loaded
     brooxMap.loadGoogle.then(function () {
