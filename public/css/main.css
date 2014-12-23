@@ -27,7 +27,8 @@ html, body {
     position: absolute;
     z-index: 2;
     bottom: 0;
-    top: 68%;
+    /*top: 68%;*/
+    min-height: 32%;
     width: 100%;
     font-size: 1.25em;
     font-weight: lighter;
@@ -75,6 +76,7 @@ ul li .super {
     position: absolute;
     right: 0.25em;
     top: -1em;
+    z-index: 5;
 }
 
 .material {
@@ -91,6 +93,18 @@ ul li .super {
 #update-button > .fa-repeat {
     color: #4CAF50;
     font-size: 1.5em;
+}
+
+
+/* = REFRESH BUTTON */
+#page-refresh {
+    position: fixed;
+    padding: 1em;
+    z-index: 3;
+    bottom: 0em;
+    right: 0em;
+    font-size: 0.75em;
+    color: #777;
 }
 
 
@@ -124,6 +138,7 @@ ul li .super {
 @media all and (orientation:portrait) {
     #app-content.collapse #data-section {
         height: auto;
+        min-height: 48px;
         top: initial;
         bottom: 0;
     }
@@ -142,6 +157,10 @@ ul li .super {
     #app-content.collapse #map-canvas {
         height: 100%;
         min-height: 100%;
+    }
+
+    #app-content.collapse #page-refresh {
+        display: none;
     }
 
 }
