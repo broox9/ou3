@@ -36,13 +36,13 @@
         <div id="data-section" ng-controller="DataController" ng-hide="!mapLoaded" class="ng-hide"
              hm-double-tap="toggleMiniLock()" >
 
-            <a id="update-button" class="material" hm-touch="handleUpdatePosition()" ng-class="(updating)? fa-spin: '' ">
+            <a id="update-button" class="material" hm-touch="handleUpdatePosition()">
                 <i class="fa fa-repeat"></i>
             </a>
 
-            <i id="page-refresh" class="fa fa-refresh" hm-hold="location.reload()"></i>
+            <i id="page-refresh" class="fa fa-plug" hm-touch="reload()"></i>
 
-            <ul class="main-data" hm-swipe-right="handleUpdatePosition()">
+            <ul class="main-data">
                 <li class="special" ng-show="area.neighborhood || area.sublocality_level_1">
                     <span class="super">Neighborhood</span>
                     {{area.neighborhood}}<span ng-show="area.sublocality_level_1">, {{area.sublocality_level_1}}</span>

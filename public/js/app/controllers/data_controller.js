@@ -1,7 +1,9 @@
 ou3.controller('DataController', [
   '$scope',
   'placer',
-  'brooxMap', function ($scope, placer, brooxMap) {
+  'brooxMap',
+  '$window',
+  function ($scope, placer, brooxMap, $window) {
   $scope.mapLoaded = false;
   $scope.area = {};
 
@@ -19,7 +21,11 @@ ou3.controller('DataController', [
   $scope.handleUpdatePosition = function () {
     console.log("handleUpdatePosition Called", arguments, Date.now())
     $scope.$emit('update_position')
-  }
+  };
+
+  $scope.reload = function () {
+    $window.location.reload();
+  };
 
 
   brooxMap.mapLoaded.then(function (map) {
