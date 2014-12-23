@@ -11,16 +11,14 @@ ou3.controller('DataController', [
 
   });
 
-  $scope.handleVerticalSwipe = function (direction) {
-    var toCollapse = true;
-    if (direction === "up") {
-      toCollapse = false;
-    }
-    $scope.$emit('set_mini_lock', toCollapse);
+  $scope.toggleMiniLock = function () {
+    console.log("toggling")
+    $scope.$emit('toggle_mini_lock');
   };
 
   $scope.handleUpdatePosition = function () {
-    console.log("handleUpdatePosition Called", arguments)
+    console.log("handleUpdatePosition Called", arguments, Date.now())
+    $scope.$emit('update_position')
   }
 
 

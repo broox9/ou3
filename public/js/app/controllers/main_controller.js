@@ -12,8 +12,8 @@ ou3.controller('MainController', [
     var mapCanvas = document.querySelector('#map-canvas');
 
     $scope.miniLock = false;
-    $scope.$on('set_mini_lock', function (e, toCollapse) {
-      $scope.miniLock = toCollapse;
+    $scope.$on('toggle_mini_lock', function (e) {
+      $scope.miniLock = !$scope.miniLock;
     });
 
 

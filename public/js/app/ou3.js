@@ -1,4 +1,4 @@
-var ou3 = angular.module("ou3", ['ngTouch','swipe']);
+var ou3 = angular.module("ou3", ['angular-gestures', 'ngAnimate']);
 
 ou3.factory('placer', [function () {
 
@@ -15,9 +15,7 @@ ou3.factory('placer', [function () {
       'administrative_area_level_2'
     ];
 
-    //console.log("raw data", data)
     return typeGrep(data,level_codes);
-
   };
 
   function typeGrep (data,level_codes) {
@@ -33,7 +31,6 @@ ou3.factory('placer', [function () {
       }
     }
 
-    //console.log("extracted Data", extractObj);
     return extractObj;
   }
 

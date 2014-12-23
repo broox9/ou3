@@ -39,10 +39,10 @@ html, body {
     box-shadow: -4px 0px 30px #000;
     
 
-    -webkit-transition-property: opacity, height;
-    transition-property: opacity, height;
-    -webkit-transition-duration: 500ms;
-    transition-duration: 500ms;
+    -webkit-transition-property: height, bottom;
+    transition-property: height, bottom;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
 }
 
 #data-section ul {
@@ -50,6 +50,7 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
 ul li .super {
     font-size: 0.5em;
     display: block;
