@@ -1,7 +1,7 @@
 ou3
 ===
 
-find yourself
+A dumb little app to help you find yourself (aka figure out what neighborhood you are in)
 
 #### Configurationness
 look at ```package.json``` and ```bower.json``` to see dependencies.
