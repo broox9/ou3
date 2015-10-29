@@ -27,6 +27,8 @@ var paths = {
 
 gulp.task('default',['build:js:app', 'build:js:vendor', 'build:css']);
 
+//TODO: clean task using 'del'
+
 gulp.task('build:js:app', function() {
   gulp.src(paths.app)
     .pipe(sourcemaps.init())
