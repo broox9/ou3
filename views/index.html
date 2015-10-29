@@ -6,7 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="translucent-black">
     <meta name="apple-mobile-web-app-title" content="Ou? v3.0.1">
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no" />
 
     <!-- Caching -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
@@ -33,7 +33,7 @@
 <body ng-app="ou3">
     <div id="app-content" ng-controller="MainController" ng-class="(miniLock)? 'collapse': 'expand' ">
         <div id="map-canvas"></div>
-        <div id="data-section" ng-controller="DataController" ng-hide="!mapLoaded" class="ng-hide"
+        <div id="data-section" ng-cloak ng-controller="DataController" ng-hide="!mapLoaded" class="ng-hide"
              hm-double-tap="toggleMiniLock()" >
 
             <a id="update-button" class="material" hm-touch="handleUpdatePosition()">
