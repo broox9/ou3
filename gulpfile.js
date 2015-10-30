@@ -14,6 +14,7 @@ var paths = {
   vendor: [
     'src/bower_components/jquery/dist/jquery.min.js',
     'src/bower_components/lodash/dist/lodash.min.js',
+    'src/bower_components/hammerjs/hammer.min.js',
     'src/bower_components/angular/angular.min.js',
     'src/bower_components/angular-hammer/angular-hammer.min.js',
     'src/bower_components/angular-gestures/gestures.min.js',
@@ -21,13 +22,17 @@ var paths = {
   ],
   css: [
     'src/bower_compoents/normalize-css/normalize.css',
-    'src/css/**/*/css'
+    'src/bower_compoents/font-awesome/css/font-awesome.min.css',
+    'src/css/**/*.css'
   ]
 }
 
 gulp.task('default',['build:js:app', 'build:js:vendor', 'build:css']);
 
-//TODO: clean task using 'del'
+gulp.task('clean', function() {
+  var deletedPaths = del.sync(['public/bundle/**/']);
+  console.log("DELETED ", deletedPaths.join('\n'));
+});
 
 gulp.task('build:js:app', function() {
   gulp.src(paths.app)
@@ -36,12 +41,12 @@ gulp.task('build:js:app', function() {
       .pipe(uglify())
       .pipe(concat({path: 'application.js'}))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('public/bundle') );
+    .pipe(gulp.dest('public/bundle'));
 });
 
 gulp.task('build:js:vendor', function() {
   gulp.src(paths.vendor)
-    .pipe(cssConcat({path: 'vendor.js'}))
+    .pipe(concat({path: 'vendor.js'}))
     .pipe(gulp.dest('public/bundle'));
 });
 
@@ -49,6 +54,7 @@ gulp.task('build:css', function() {
   gulp.src(paths.css)
     // .pipe(cssMin())
     .pipe(cssConcat('application.css'))
+    .pipe(cssMin())
     .pipe(gulp.dest('public/bundle') );
 });
 

@@ -17,17 +17,11 @@
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxPzhDXUPPcDaVwy34HIvwzWTdKwCEPBY"></script>
 
     <!-- iOS icons -->
-    <link rel="apple-touch-startup-image" href="/public/img/ou-start.jpg" />
-    <link rel="apple-touch-icon" href="/public/img/ou-icon@2x.png" />
+    <link rel="apple-touch-startup-image" href="/img/ou-start.jpg" />
+    <link rel="apple-touch-icon" href="/img/ou-icon@2x.png" />
+    <link rel="stylesheet" href="/bundle/application.css" />
 
-
-    <link type="text/css" rel="stylesheet" href="/public/lib/normalize.css/normalize.css" />
-    <link type="text/css" rel="stylesheet" href="/public/lib/font-awesome/css/font-awesome.min.css" />
-    <link type="text/css" rel="stylesheet" href="/public/css/main.css" />
-
-
-    <script type="text/javascript" src="/public/lib/lodash/dist/lodash.min.js"></script>
-    <script type="text/javascript" src="/public/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/bundle/vendor.js"></script>
 </head>
 
 <body ng-app="ou3">
@@ -74,13 +68,5 @@
     </div>
 </body>
 
-<script type="text/javascript" src="/public/lib/angular/angular.min.js"></script>
-<script type="text/javascript" src="/public/lib/hammerjs/hammer.min.js"></script>
-<script type="text/javascript" src="/public/lib/angular-gestures/gestures.min.js" ></script>
-<script type="text/javascript" src="/public/lib/angular-animate/angular-animate.min.js"></script>
-
-<!-- actual app -->
-<script type="text/javascript" src="/public/js/app/ou3.js"></script>
-<script type="text/javascript" src="/public/js/app/controllers/main_controller.js"></script>
-<script type="text/javascript" src="/public/js/app/controllers/data_controller.js"></script>
+<script type="text/javascript" src="/bundle/application.js"></script>
 </html>
