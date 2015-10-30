@@ -21,7 +21,8 @@ require('./router/main')(app);
 
 
 //where to the static files live tho?
-app.use('/public', express.static(__dirname + '/public'));
+// app.use('/public', express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
 
 //set up the views dir and engines
 app.set('views', __dirname + '/views');
