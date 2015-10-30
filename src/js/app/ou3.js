@@ -1,4 +1,4 @@
-var ou3 = angular.module("ou3", ['angular-gestures', 'ngAnimate']);
+var ou3 = angular.module("ou3", ['ngTouch', 'ngAnimate']);
 
 ou3.factory('placer', [function () {
 

@@ -14,10 +14,11 @@ var paths = {
   vendor: [
     'src/bower_components/jquery/dist/jquery.min.js',
     'src/bower_components/lodash/dist/lodash.min.js',
-    'src/bower_components/hammerjs/hammer.min.js',
+    // 'src/bower_components/hammerjs/hammer.js',
     'src/bower_components/angular/angular.min.js',
-    'src/bower_components/angular-hammer/angular-hammer.min.js',
-    'src/bower_components/angular-gestures/gestures.min.js',
+    'src/bower_components/angular-touch/angular-touch.min.js',
+    // 'src/bower_components/angular-hammer/angular-hammer.js',
+    // 'src/bower_components/angular-gestures/gestures.min.js',
     'src/bower_components/angular-animate/angular-animate.js'
   ],
   css: [
@@ -46,7 +47,7 @@ gulp.task('build:js:app', function() {
 
 gulp.task('build:js:vendor', function() {
   gulp.src(paths.vendor)
-    .pipe(concat({path: 'vendor.js'}))
+    .pipe(concat({path: 'vendor.js', newLine:';;'}))
     .pipe(gulp.dest('public/bundle'));
 });
 
