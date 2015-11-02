@@ -1,26 +1,3 @@
-/* = defaults and such */
-html, body {
-    height: 100%;
-    width: 100%;
-    font-size: normal;
-}
-
-
-/* = Layout */
-#app-content {
-    height: 100%;
-    width: 100%;
-}
-
-#map-canvas {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 70%;
-}
-
-
-
 /* = DATA SECTION ******** */
 #data-section {
     display: block;
@@ -38,7 +15,7 @@ html, body {
     background: linear-gradient(to top right, #333, #565656);
     color: #fff;
     box-shadow: -4px 0px 30px #000;
-    
+
 
     -webkit-transition-property: height, bottom;
     transition-property: height, bottom;
@@ -90,7 +67,7 @@ ul li .super {
     box-shadow: 1px 6px 8px #555;
 }
 
-#update-button > .fa-repeat {
+#update-button > .fa.fa-repeat{
     color: #4CAF50;
     font-size: 1.5em;
 }
@@ -105,62 +82,4 @@ ul li .super {
     right: 0em;
     font-size: 0.75em;
     color: #777;
-}
-
-
-@media all and (orientation:landscape) {
-
-    #map-canvas {
-        display: inline-block;
-        width: 60%;
-        height: 100%;
-    }
-
-    #data-section {
-        display: inline-block;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        width: 40%;
-        box-shadow: -2px 0px 10px #777;
-    }
-
-    #update-button {
-        right: initial;
-        top: initial;
-        left: -1em;
-        bottom: 0.5em;
-    }
-
-}
-
-@media all and (orientation:portrait) {
-    #app-content.collapse #data-section {
-        height: auto;
-        min-height: 48px;
-        top: initial;
-        bottom: 0;
-    }
-
-    #app-content.collapse #data-section .main-data li {
-        display: none;
-    }
-    #app-content.collapse #data-section .main-data li:first-child {
-        display: block;
-    }
-
-    #app-content.collapse #data-section .extra-data {
-        display: none;
-    }
-
-    #app-content.collapse #map-canvas {
-        height: 100%;
-        min-height: 100%;
-    }
-
-    #app-content.collapse #page-refresh {
-        display: none;
-    }
-
 }

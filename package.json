@@ -1,6 +1,6 @@
 {
   "name": "Ou",
-  "version": "3.0.1",
+  "version": "3.2",
   "description": "the new hotness",
   "private": true,
   "engines": {
@@ -23,7 +23,10 @@
     "gulp-babel": "^5.3.0",
     "gulp-concat-css": "^2.2.0",
     "gulp-cssmin": "^0.1.7",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^1.6.0",
+    "gulp-watch": "^4.3.5",
     "http-server": "^0.7.3"
   },
   "main": "server.js"

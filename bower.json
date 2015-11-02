@@ -1,6 +1,6 @@
 {
   "name": "Ou",
-  "version": "3.0.1",
+  "version": "3.2",
   "description": "the new hotness",
   "dependencies": {
     "angular": "~1.3.4",
@@ -10,9 +10,8 @@
     "lodash": "~2.4.1",
     "font-awesome": "~4.2.0",
     "angular-swipe": "~0.0.7",
-    "angular-hammer": "~1.2.4",
-    "angular-gestures": "~0.3.0",
-    "angular-animate": "~1.3.8"
+    "angular-animate": "~1.3.8",
+    "sanitize-css": "~3.0.0"
   },
   "devDependencies": {}
 }

@@ -1,4 +1,5 @@
-ou3.controller('DataController', [
+angular.module('ou3')
+.controller('DataController', [
   '$scope',
   'placer',
   'brooxMap',

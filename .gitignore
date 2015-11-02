@@ -1,6 +1,7 @@
 node_modules/
 .elasticbeanstalk/
 #public/lib
+/bower_components
 src/bower_components
 
 # Elastic Beanstalk Files

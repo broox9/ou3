@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>¿Ou? v3.0.1</title>
+    <title>¿Ou? v3.2</title>
     <!-- webapp ios Stuff -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="translucent-black">
-    <meta name="apple-mobile-web-app-title" content="Ou? v3.0.1">
+    <meta name="apple-mobile-web-app-title" content="Ou? v3.0.5">
     <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no" />
 
     <!-- Caching -->
@@ -13,28 +13,27 @@
     <meta http-equiv="Pragma" content="no-cache"/>
     <meta http-equiv="Expires" content="0"/>
 
-    <script type="text/javascript"
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxPzhDXUPPcDaVwy34HIvwzWTdKwCEPBY"></script>
-
     <!-- iOS icons -->
     <link rel="apple-touch-startup-image" href="/img/ou-start.jpg" />
     <link rel="apple-touch-icon" href="/img/ou-icon@2x.png" />
     <link rel="stylesheet" href="/bundle/application.css" />
 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxPzhDXUPPcDaVwy34HIvwzWTdKwCEPBY"></script>
     <script type="text/javascript" src="/bundle/vendor.js"></script>
+
 </head>
 
 <body ng-app="ou3">
     <div id="app-content" ng-controller="MainController" ng-class="(miniLock)? 'collapse': 'expand' ">
         <div id="map-canvas"></div>
         <div id="data-section" ng-cloak ng-controller="DataController" ng-hide="!mapLoaded" class="ng-hide"
-             ng-click="toggleMiniLock()" >
+             hm-double-tap="toggleMiniLock()" >
 
             <a id="update-button" class="material" ng-click="handleUpdatePosition()">
                 <i class="fa fa-repeat"></i>
             </a>
 
-            <i id="page-refresh" class="fa fa-plug" ng-click="reload()"></i>
+            <i id="page-refresh" class="fa fa-power-off" ng-click="reload()"></i>
 
             <ul class="main-data">
                 <li class="special" ng-show="area.neighborhood || area.sublocality_level_1">
@@ -67,6 +66,5 @@
 
     </div>
 </body>
-
 <script type="text/javascript" src="/bundle/application.js"></script>
 </html>
