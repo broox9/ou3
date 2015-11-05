@@ -1,5 +1,5 @@
-var express = require('express')
-var app = express()
+var express = require('express');
+var app = express();
 //var bodyParser = require('bodyParser')
 //var cookieParser = require('cookieParser')
 //var session = require('session')
@@ -7,7 +7,7 @@ var app = express()
 var port = process.env.PORT || 3000;
 var wu ='680c6f1ba7a156e7';
 // require the router
-require('./router/main')(app);
+require('router/main')(app);
 
 ////body parser plugin for POST requests
 //app.use(bodyParser.json());
