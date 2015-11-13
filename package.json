@@ -1,6 +1,6 @@
 {
   "name": "Ou",
-  "version": "3.2",
+  "version": "3.2.0",
   "description": "the new hotness",
   "private": true,
   "engines": {
@@ -19,7 +19,9 @@
     "express-session": "^1.9.2",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
-    "gulp-uglify": "^1.4.2"
+    "gulp-uglify": "^1.4.2",
+    "shipit-captain": "^0.4.3",
+    "shipit-shared": "^4.1.7"
   },
   "devDependencies": {
     "del": "^2.0.2",
@@ -30,7 +32,8 @@
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-watch": "^4.3.5",
-    "http-server": "^0.7.3"
+    "http-server": "^0.7.3",
+    "shipit-deploy": "^2.0.0"
   },
   "main": "server.js"
 }

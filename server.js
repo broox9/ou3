@@ -7,7 +7,7 @@ var app = express();
 var port = process.env.PORT || 3000;
 var wu ='680c6f1ba7a156e7';
 // require the router
-require('router/main')(app);
+require('./router/main')(app);
 
 ////body parser plugin for POST requests
 //app.use(bodyParser.json());
