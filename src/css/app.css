@@ -23,13 +23,13 @@ html, body {
 
 @media all and (orientation:landscape) {
 
-    #map-canvas {
+    #app-content #map-canvas {
         display: inline-block;
         width: 60%;
         height: 100%;
     }
 
-    #data-section {
+    #app-content #data-section {
         display: inline-block;
         position: absolute;
         top: 0;
@@ -39,7 +39,7 @@ html, body {
         box-shadow: -2px 0px 10px #777;
     }
 
-    #update-button {
+    #data-section #update-button {
         right: initial;
         top: initial;
         left: -1em;

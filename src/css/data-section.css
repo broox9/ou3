@@ -48,7 +48,7 @@ ul li .super {
 
 /* = UPDATE BUTTON ****** */
 #update-button {
-    transitiion-property: bottom;
+    transition-property: bottom;
     transition-duration: 250ms;
     position: absolute;
     right: 0.25em;
@@ -71,7 +71,6 @@ ul li .super {
     color: #4CAF50;
     font-size: 1.5em;
 }
-
 
 /* = REFRESH BUTTON */
 #page-refresh {

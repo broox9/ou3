@@ -61,16 +61,19 @@ gulp.task('build:js:vendor', function() {
 });
 
 gulp.task('build:css', function() {
-  console.log("PATHS CSS", paths.css)
   gulp.src(paths.css)
     // .pipe(cssMin())
-    .pipe(concat({path:'application.css'}))
+    .pipe(cssConcat('application.css'))
+    .pipe(minifyCss())
     .pipe(gulp.dest('public/bundle') );
 });
 
 
-// gulp.task('watch', function() {
-//   watch([paths.app, paths.css], function() {
-//     gulp.start(['clean', 'default'])
-//   })
-// });
+gulp.task('watch', function() {
+  var pathArray = [].concat(paths.app, paths.css);
+  pathArray.push('gulpfile.js');
+
+  watch(pathArray, function() {
+    gulp.start(['clean', 'default']);
+  })
+});
