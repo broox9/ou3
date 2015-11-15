@@ -7,7 +7,7 @@ module.exports = function (shipit) {
     default: {
       workspace: '/tmp/ou3',
       deployTo: '/var/www/ou3',
-      dirToCopy: 'public',
+      // dirToCopy: 'public',
       repositoryUrl: 'https://github.com/broox9/ou3.git',
       ignores: ['.git', 'node_modules', 'bower_components', '.idea', '.ebextensions'],
       keepReleases: 2,
